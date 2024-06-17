@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style.css">
+    <title><%= title %></title>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1><%= title %></h1>
+            <a href="/new-articl">New Articl</a>
+        </nav>
+    </header>
+    <div class="contenar">
+        <% for( let i = 0; i < articls.length; i++ ) { %>
+            <div class="articl">
+                <h2><%= articls[i].title %></h2>
+                <p><%= articls[i].content %></p>
+                <a href="/articl/<%= articls[i].id %>">Read more</a>
+            </div>
+        <% } %>
+    </div>
+</body>
+</html>
