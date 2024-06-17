@@ -20,8 +20,47 @@ const addNewArticl = (req,res) => {
     .catch(err => {consol.log(err)})
 };
 
+const articlPage = (req,res) => {
+  const id = req.params.id;
+  articlModel.findById(id)
+  .then((articl) => {
+    res.render('fullArticle',{articl: articl,title:"article"})
+  })
+};
+
+const deleteArticle = (req,res) => {
+  const id = req.params.id;
+  articlModel.findByIdAndDelete(id)
+  .then(()=>{
+    res.redirect('/');
+  })
+  .catch(err => consol.log(err));
+};
+
+const editArticle = (req,res) => {
+  const id = req.params.id;
+  articlModel.findById(id)
+  .then((article) => {
+    res.render('editArticle',{articl: article,title:"Edit article"})  
+  })
+  .catch(err => consol.log(err));
+ }
+
+const saveEditArticle = (req,res) => {
+  const id = req.params.id;
+  articlModel.findByIdAndUpdate(id,req.body)
+  .then(() => {
+    res.redirect('/');
+  })
+  .catch(err => consol.log(err));
+}
+
 module.exports = {
     homePage,
     newArticl,
-    addNewArticl
+    addNewArticl,
+    articlPage,
+    deleteArticle,
+    editArticle,
+    saveEditArticle
 };

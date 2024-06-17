@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style.css">
+    <title><%= title %></title>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1><%= title %></h1>
+            <a href="/">Back</a>
+        </nav>
+    </header>
+    <div class="form">
+        <form action="/edit-articl/<%= articl.id %>" method="post">
+            <label for="title">Title:</label>
+            <input value=",<%= articl.title %>" type="text" id="title" name="title" required minlength="25">
+            <label for="content">Content:</label>
+            <textarea id="content" name="content" required minlength="100"><%= articl.content %></textarea>
+            <button class="btn">Save</button>
+        </form>
+    </div>
+    
+</body>
+</html>
