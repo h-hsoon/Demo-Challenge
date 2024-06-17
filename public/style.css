@@ -21,5 +21,43 @@ header nav a:hover{
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 5px;
+}
+
+.form form input{
+    width: 50%;
+}
+
+.form form textarea{
+    width: 50%;
+    height: 20em;
+}
+
+.button{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5em;
+}
+
+.delete{
+    background-color: red;
+    color: white;
+    border: 1px solid red;
+}
+.delete:hover{
+    background-color: #8B0A1A;
+    border: #8B0A1A;
+}
+
+.update ,.btn{
+    background-color: rgb(4, 116, 19);
+    color: white;
+    border: 1px solid rgb(4, 116, 19);
 
 }
+
+.update:hover ,.btn:hover{
+    background-color: #0B5A0B;
+    border: #0B5A0B;
+}
+
