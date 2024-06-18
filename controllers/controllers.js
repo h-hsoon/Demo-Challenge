@@ -5,6 +5,7 @@ const homePage =(erq,res) => {
   .then((articls) => {
     res.render('home',{articls : articls,title:"Home page"})
   })
+  .catch(err => console.log(err));
 };
 
 const newArticl =(req,res) => {

@@ -17,7 +17,7 @@
         <% for( let i = 0; i < articls.length; i++ ) { %>
             <div class="articl">
                 <h2><%= articls[i].title %></h2>
-                <p><%= articls[i].content %></p>
+                <p><%= articls[i].content.slice(0, 80) %> .....</p>
                 <a href="/articl/<%= articls[i].id %>">Read more</a>
             </div>
         <% } %>
